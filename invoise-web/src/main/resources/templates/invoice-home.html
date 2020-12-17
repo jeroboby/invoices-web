@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Gestion des factures</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
 </head>
 <body>
 <h1>Bienvenue dans la page de gestion des factures</h1>
@@ -10,13 +11,18 @@
 <ul>
     <li><a href="create-form">Ajout de factures</a></li>
 </ul>
-<table border="1">
-    <tr th:each="invoice: ${invoices}">
-        <td>
-            <a th:href="${invoice.number}" th:text="${invoice.number}"></a>
-        </td>
-        <td th:text="${invoice.customerName}"></td>
-    </tr>
-</table>
+<section class="container">
+    <div class="left-half">
+        <article id="invoice-list">
+
+        </article>
+    </div>
+    <div class="right-half">
+        <article id="invoice-detail">
+
+        </article>
+    </div>
+</section>
+<script th:src="@{/js/script.js}"></script>
 </body>
 </html>
